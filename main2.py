@@ -2,7 +2,6 @@ from tkinter import *
 import numpy as np
 import cv2
 from PIL import Image, ImageTk
-import Resimler
 
 def hueminchange(v):
     global huemin

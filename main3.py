@@ -1,15 +1,29 @@
-#gausianBlur çalışmama nedenini arıyorum.
-import cv2
+import os
+from tkinter import *
 import numpy as np
 import cv2 as cv
 
-filename = "G:\\Media\\Ukraine\\DSC00038.JPG"
+from os import listdir
+from os.path import isfile, join
 
-resim = cv.imread(filename)
-kernel = (21,21)
-gblur = cv.blur(resim, kernel, cv2.BORDER_TRANSPARENT)
 
-cv.imshow("resim", gblur)
+from PIL import Image, ImageTk
 
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+
+# yıl ay gun saat dakika saniye sanise ile bir id verelim dosyalara
+def GetFiles(foldername):
+     return [f for f in listdir(foldername) if isfile(join(foldername, f))]
+
+
+foldername = os.path.realpath("Resimler")
+print(foldername)
+#filenameList = GetFiles(foldername)
+#for file in filenameList:
+ #   print(file)
+
+
+
+
+
+
+

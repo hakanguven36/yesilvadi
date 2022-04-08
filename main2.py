@@ -52,7 +52,6 @@ def MakeScaler(inframe, minimum, maximum, commandante, value, labeltext):
     somescaler.pack(side="left")
     someLabel = Label(ininframe, text=labeltext)
     someLabel.pack(side="left")
-
     ininframe.pack(anchor="w")
 
 
@@ -106,19 +105,6 @@ def ResmiGoster():
         printison = False
 
 
-
-
-
-    # s = 100
-    # for h in range(int(700/s)):
-    #     for w in range(int(1000/s)):
-    #         c = cropped[s*h:s*(h+1), s*w:s*(w+1)]
-    #         #print(np.average(c))
-    #         if np.average(c) > 40:
-    #             part = orjImage[s * h:s * (h + 1), s * w:s * (w + 1)]
-    #             cv2.imwrite("parts/utaem04_" + str(h+w) + ".jpg", part)
-
-
     im = Image.fromarray(masked)
     global editedImage
     editedImage = ImageTk.PhotoImage(image=im)
@@ -144,10 +130,20 @@ mainframe = Frame(root, border=10)
 showtimeframe = Frame(mainframe)
 WindowYarat()
 
-img = cv2.imread("210612 2012.jpg")
-orjImage = cv2.resize(img, dsize=(1000, 700), interpolation=cv2.INTER_CUBIC)
+orjImage = cv2.imread("utaem04.jpg")
+#orjImage = cv2.resize(img, dsize=(1000, 700), interpolation=cv2.INTER_CUBIC)
 
 resgen = 1000
 resyuk = 700
 ResmiGoster()
 root.mainloop()
+
+array = [
+    {"hayvanadi": "kedi", "ayaksayisi":4},
+    {"hayvanadi": "köpek", "ayaksayisi":4},
+    {"hayvanadi": "kuş", "ayaksayisi":2},
+    {"hayvanadi": "fare", "ayaksayisi":4}]
+
+ciftler = [c for c in array if c["ayaksayisi"] == 4]
+for c in ciftler:
+    print(c["hayvanadi"])
